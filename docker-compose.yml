@@ -1,0 +1,25 @@
+services:
+  qdrant:
+    image: qdrant/qdrant:latest
+    ports:
+      - "6333:6333"
+    volumes:
+      - qdrant_data:/qdrant/storage
+
+  api:
+    build:
+      context: .
+      args:
+        HTTP_PROXY: http://10.2.68.81:3389/
+        HTTPS_PROXY: http://10.2.68.81:3389/
+        NO_PROXY: localhost,127.0.0.1,127.0.0.0/8,::1,10.0.0.0/8,qdrant,api
+    environment:
+      - QDRANT_URL=http://qdrant:6333
+      - COLLECTION_NAME=rag_chunks
+    ports:
+      - "8000:8000"
+    depends_on:
+      - qdrant
+
+volumes:
+  qdrant_data:
