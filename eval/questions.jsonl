@@ -1,0 +1,44 @@
+{"id":"fa_q01","query":"In one sentence, what is FlashAttention?","expected_sources":["flashattention.pdf"]}
+{"id":"fa_q02","query":"Why is standard attention often memory-bound on GPUs?","expected_sources":["flashattention.pdf"]}
+{"id":"fa_q03","query":"What does FlashAttention avoid materializing, and why does that matter?","expected_sources":["flashattention.pdf"]}
+{"id":"fa_q04","query":"How does tiling help FlashAttention use SRAM effectively?","expected_sources":["flashattention.pdf"]}
+{"id":"fa_q05","query":"What are the two main benefits claimed for FlashAttention (speed and memory), and what causes them?","expected_sources":["flashattention.pdf"]}
+{"id":"fa_q06","query":"FlashAttention mentions reducing HBM accesses—what is the relationship between memory access count and runtime?","expected_sources":["flashattention.pdf"]}
+{"id":"fa_q07","query":"How does FlashAttention compute softmax without storing the full attention matrix? (high-level)","expected_sources":["flashattention.pdf"]}
+{"id":"fa_q08","query":"What is block-sparse FlashAttention and why would sparsity help?","expected_sources":["flashattention.pdf"]}
+{"id":"fa_q09","query":"What kinds of models/sequence lengths benefit most from FlashAttention according to the paper?","expected_sources":["flashattention.pdf"]}
+{"id":"fa_q10","query":"Compare FlashAttention to a baseline attention implementation: what changes in the memory hierarchy usage explain the difference?","expected_sources":["flashattention.pdf"]}
+
+{"id":"vllm_q01","query":"What problem in LLM serving is vLLM trying to solve?","expected_sources":["vllm_pagedattention.pdf"]}
+{"id":"vllm_q02","query":"What is the KV cache in decoder-only Transformers and why does it grow?","expected_sources":["vllm_pagedattention.pdf"]}
+{"id":"vllm_q03","query":"What is 'PagedAttention' in one sentence?","expected_sources":["vllm_pagedattention.pdf"]}
+{"id":"vllm_q04","query":"How does vLLM reduce KV-cache memory waste compared to naive allocation?","expected_sources":["vllm_pagedattention.pdf"]}
+{"id":"vllm_q05","query":"What is the idea of paging (like OS virtual memory) applied to attention/KV cache?","expected_sources":["vllm_pagedattention.pdf"]}
+{"id":"vllm_q06","query":"What is fragmentation in KV cache memory, and how does vLLM address it?","expected_sources":["vllm_pagedattention.pdf"]}
+{"id":"vllm_q07","query":"How does vLLM support many concurrent requests with different sequence lengths?","expected_sources":["vllm_pagedattention.pdf"]}
+{"id":"vllm_q08","query":"What are the main components of vLLM’s serving pipeline that enable higher throughput? (high-level)","expected_sources":["vllm_pagedattention.pdf"]}
+{"id":"vllm_q09","query":"Why do long prompts + many users stress KV cache, and what mechanism in vLLM helps prevent OOM?","expected_sources":["vllm_pagedattention.pdf"]}
+{"id":"vllm_q10","query":"What trade-off does paging introduce (e.g., bookkeeping/indirection) and why is it still worth it?","expected_sources":["vllm_pagedattention.pdf"]}
+
+{"id":"attn_q01","query":"What is self-attention in Transformers (high-level definition)?","expected_sources":["attention_is_all_you_need.pdf"]}
+{"id":"attn_q02","query":"Why do Transformers use positional encoding?","expected_sources":["attention_is_all_you_need.pdf"]}
+{"id":"attn_q03","query":"What is the difference between self-attention and encoder-decoder attention?","expected_sources":["attention_is_all_you_need.pdf"]}
+{"id":"attn_q04","query":"What is multi-head attention and why have multiple heads?","expected_sources":["attention_is_all_you_need.pdf"]}
+{"id":"attn_q05","query":"Write the core idea of scaled dot-product attention in words (no formulas needed).","expected_sources":["attention_is_all_you_need.pdf"]}
+{"id":"attn_q06","query":"Why is scaling by sqrt(d_k) used in dot-product attention?","expected_sources":["attention_is_all_you_need.pdf"]}
+{"id":"attn_q07","query":"What role do residual connections and layer normalization play in the Transformer blocks?","expected_sources":["attention_is_all_you_need.pdf"]}
+{"id":"attn_q08","query":"What is the purpose of the position-wise feed-forward network in a Transformer layer?","expected_sources":["attention_is_all_you_need.pdf"]}
+{"id":"attn_q09","query":"What masking is applied in the decoder’s self-attention, and why?","expected_sources":["attention_is_all_you_need.pdf"]}
+{"id":"attn_q10","query":"In the paper titled 'Attention Is All You Need' (Vaswani et al., 2017), what advantages does the Transformer architecture claim over RNNs and CNNs for sequence modeling? Mention parallel training and path length.","expected_sources":["attention_is_all_you_need.pdf"]}
+
+{"id":"conf_q01","query":"FlashAttention and PagedAttention both target efficiency. Which one focuses on reducing HBM materialization of the attention matrix, and how?","expected_sources":["flashattention.pdf"]}
+{"id":"conf_q02","query":"In vLLM, what is PagedAttention and how does it relate to KV cache growth during decoding (contrast with standard attention improvements like FlashAttention)?","expected_sources":["vllm_pagedattention.pdf"]}
+{"id":"conf_q03","query":"Transformers use self-attention; FlashAttention optimizes attention kernels. What is the core self-attention mechanism being optimized?","expected_sources":["attention_is_all_you_need.pdf"]}
+{"id":"conf_q04","query":"Why can serving many users with long prompts cause OOM, and what does vLLM do about it (not kernel fusion like FlashAttention)?","expected_sources":["vllm_pagedattention.pdf"]}
+{"id":"conf_q05","query":"Multi-head attention is defined in the Transformer paper, but FlashAttention changes the implementation. What is multi-head attention and why do we have multiple heads?","expected_sources":["attention_is_all_you_need.pdf"]}
+
+{"id":"neg_q01","query":"What is LoRA fine-tuning and how does it reduce trainable parameters?","expected_sources":[]}
+{"id":"neg_q02","query":"Explain the PPO algorithm used in RLHF for aligning language models.","expected_sources":[]}
+{"id":"neg_q03","query":"What is the AdamW optimizer update rule and why decoupled weight decay matters?","expected_sources":[]}
+{"id":"neg_q04","query":"What is speculative decoding and how does it improve generation throughput?","expected_sources":[]}
+{"id":"neg_q05","query":"What is BM25 and how does it score documents in lexical retrieval?","expected_sources":[]}

@@ -6,3 +6,10 @@ data/
 results/
 .vscode/
 .DS_Store
+
+models/
+.venv/
+__pycache__/
+*.pyc
+.env
+results/

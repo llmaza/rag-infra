@@ -23,5 +23,6 @@ services:
       - ./data:/app/data
       - ./app:/app/app
       - ./scripts:/app/scripts
+    command: ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
 volumes:
   qdrant_data:
